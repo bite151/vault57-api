@@ -40,6 +40,7 @@ export class UploadService {
       __dirname,
       '..',
       '..',
+      '..',
       'uploads',
       'images',
       fileName,
@@ -56,6 +57,7 @@ export class UploadService {
       __dirname,
       '..',
       '..',
+      '..',
       'uploads',
       'images',
       imageName,
@@ -64,29 +66,27 @@ export class UploadService {
       __dirname,
       '..',
       '..',
+      '..',
       'uploads',
       'webp',
       `${imageName}.webp`,
     );
 
-    // Проверяем существование исходного изображения
     if (!existsSync(imagePath)) {
-      throw new BadRequestException('Изображение не найдено');
+      throw new BadRequestException('Image not found');
     }
 
     try {
-      // Удаляем исходное изображение
       await promises.unlink(imagePath);
 
-      // Если существует преобразованное изображение в webp, удаляем его
       if (existsSync(webpPath)) {
         await promises.unlink(webpPath);
       }
 
-      return { message: 'Изображение успешно удалено' };
+      return { message: 'The image has been successfully deleted' };
       // eslint-disable-next-line @typescript-eslint/no-unused-vars
     } catch (error) {
-      throw new BadRequestException('Ошибка при удалении изображения');
+      throw new BadRequestException('Image deletion error');
     }
   }
 }

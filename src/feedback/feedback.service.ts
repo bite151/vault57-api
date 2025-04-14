@@ -17,6 +17,16 @@ export class FeedbackService {
   async create(createFeedbackDto: CreateFeedbackDto) {
     try {
       const feedback = await this.feedbackRepository.save(createFeedbackDto);
+
+      const text: string = `
+*Client*: ${createFeedbackDto.clientName}
+*Contact*: ${createFeedbackDto.contact}
+
+${createFeedbackDto.message}
+      `;
+
+      await this.telegramService.sendMessage(text);
+
       await this.mailService.sendFeedbackEmail(
         createFeedbackDto.clientName,
         createFeedbackDto.contact,
@@ -27,14 +37,6 @@ export class FeedbackService {
         status: 1,
       });
 
-      const text: string = `
-*Client*: ${createFeedbackDto.clientName}
-*Contact*: ${createFeedbackDto.contact}
-
-${createFeedbackDto.message}
-      `;
-
-      await this.telegramService.sendMessage(text);
       return {
         message: 'Successfully sent',
       };

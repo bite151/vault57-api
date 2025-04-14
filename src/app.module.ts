@@ -5,7 +5,7 @@ import { TypeOrmModule } from '@nestjs/typeorm';
 import { PagesModule } from './pages/pages.module';
 import { AuthModule } from './auth/auth.module';
 import { UsersModule } from './users/users.module';
-import { UploadModule } from './upload/upload.module';
+import { UploadModule } from './libs/upload/upload.module';
 import { ImageModule } from './image/image.module';
 import { MailModule } from './libs/mail/mail.module';
 import { FeedbackModule } from './feedback/feedback.module';

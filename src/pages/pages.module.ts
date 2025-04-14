@@ -8,7 +8,7 @@ import { PageDesktopEntity } from './entities/page_desktop.entity';
 import { PageMobileEntity } from './entities/page_mobile.entity';
 import { UsersService } from '../users/users.service';
 import { UserEntity } from '../users/entities/user.entity';
-import { UploadService } from '../upload/upload.service';
+import { UploadService } from '../libs/upload/upload.service';
 
 @Module({
   imports: [
