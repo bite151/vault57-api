@@ -35,6 +35,9 @@ export class PageDesktopEntity {
   @Column({ type: 'tinyint', width: 1, default: 0 })
   resetWidth: number;
 
+  @Column({ type: 'varchar', length: 100, nullable: true })
+  background: string;
+
   @Column({ type: 'tinyint', width: 1, default: 0 })
   hideStatusBar: number;
 

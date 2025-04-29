@@ -206,6 +206,11 @@ export class PagesService {
     }
   }
 
+  async removeArray(ids: number[]) {
+    const promises = ids.map((id) => this.remove(id));
+    return await Promise.all(promises);
+  }
+
   async getPageById(id: number): Promise<PageEntity> {
     const page = await this.pageRepository.findOne({
       where: { id },

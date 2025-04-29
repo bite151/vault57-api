@@ -47,6 +47,11 @@ class PageDesktopDto {
   @IsInt()
   @IsOptional()
   hideStatusBar: number;
+
+  @IsString()
+  @IsOptional()
+    // @IsHexColor()
+  background: string;
 }
 
 class PageMobileDto {
@@ -80,6 +85,7 @@ class PageMobileDto {
   @IsOptional()
   loadParentScreens: number;
 
+  @IsString()
   @IsOptional()
   // @IsHexColor()
   background: string;

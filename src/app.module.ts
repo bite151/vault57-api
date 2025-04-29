@@ -10,6 +10,7 @@ import { ImageModule } from './image/image.module';
 import { MailModule } from './libs/mail/mail.module';
 import { FeedbackModule } from './feedback/feedback.module';
 import { TelegramModule } from './libs/telegram/telegram.module';
+import { ReviewsModule } from './reviews/reviews.module';
 
 @Module({
   imports: [
@@ -27,6 +28,7 @@ import { TelegramModule } from './libs/telegram/telegram.module';
     MailModule,
     TelegramModule,
     FeedbackModule,
+    ReviewsModule,
   ],
   controllers: [],
   providers: [],

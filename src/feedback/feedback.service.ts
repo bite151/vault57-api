@@ -21,7 +21,6 @@ export class FeedbackService {
       const text: string = `
 *Client*: ${createFeedbackDto.clientName}
 *Contact*: ${createFeedbackDto.contact}
-
 ${createFeedbackDto.message}
       `;
 
@@ -43,9 +42,5 @@ ${createFeedbackDto.message}
     } catch (error) {
       throw new BadRequestException(error);
     }
-  }
-
-  findAll() {
-    return `This action returns all feedback`;
   }
 }

@@ -7,6 +7,7 @@ import {
   Param,
   Delete,
   NotFoundException,
+  HttpCode,
 } from '@nestjs/common';
 import { PagesService } from './pages.service';
 import { CreatePageDto } from './dto/create-page.dto';
@@ -77,6 +78,21 @@ export class PagesController {
     try {
       await this.pagesService.remove(+id);
       return { id, message: 'Page deleted successfully' };
+    } catch (error) {
+      if (error instanceof NotFoundException) {
+        throw new NotFoundException(error.message);
+      }
+      throw error;
+    }
+  }
+
+  @Authorization(UserRole.ADMIN)
+  @Post('/delete-array')
+  @HttpCode(204)
+  async removeArray(@Body() ids: number[]) {
+    try {
+      await this.pagesService.removeArray(ids);
+      return { ids, message: 'Pages deleted successfully' };
     } catch (error) {
       if (error instanceof NotFoundException) {
         throw new NotFoundException(error.message);

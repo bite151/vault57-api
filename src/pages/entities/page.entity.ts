@@ -19,6 +19,7 @@ export enum UserRole {
 export enum ItemType {
   FILE = 'file',
   FOLDER = 'folder',
+  REVIEW = 'review',
 }
 
 @Entity('pages')

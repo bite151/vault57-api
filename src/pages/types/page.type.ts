@@ -36,6 +36,7 @@ export interface DesktopPagePropsType {
   showInFinder: boolean;
   resetWidth: boolean;
   hideStatusBar: boolean;
+  background: string;
 }
 
 export interface MobilePagePropsType {
