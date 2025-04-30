@@ -11,6 +11,8 @@ import { MailModule } from './libs/mail/mail.module';
 import { FeedbackModule } from './feedback/feedback.module';
 import { TelegramModule } from './libs/telegram/telegram.module';
 import { ReviewsModule } from './reviews/reviews.module';
+import { GalleryModule } from './gallery/gallery.module';
+import { DesktopModule } from './desktop/desktop.module';
 
 @Module({
   imports: [
@@ -29,6 +31,8 @@ import { ReviewsModule } from './reviews/reviews.module';
     TelegramModule,
     FeedbackModule,
     ReviewsModule,
+    GalleryModule,
+    DesktopModule,
   ],
   controllers: [],
   providers: [],
