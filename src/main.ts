@@ -67,7 +67,8 @@ async function bootstrap() {
         secure: parseBoolean(
           configService.getOrThrow<string>('SESSION_SECURE'),
         ),
-        sameSite: 'lax',
+        sameSite: configService.getOrThrow<'lax' | 'strict'>('SAME_SITE'),
+        path: '/',
       },
     }),
   );
