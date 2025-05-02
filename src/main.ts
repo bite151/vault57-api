@@ -36,6 +36,7 @@ async function bootstrap() {
   const redisClient = new IORedis({
     host: configService.get<string>('REDIS_HOST'),
     port: +configService.getOrThrow<string>('REDIS_PORT'),
+    password: configService.get<string>('REDIS_PASSWORD'),
   });
 
   redisClient.on('error', (err) => {
@@ -58,6 +59,7 @@ async function bootstrap() {
       name: configService.getOrThrow<string>('SESSION_NAME'),
       resave: true,
       saveUninitialized: false,
+      proxy: true,
       cookie: {
         domain: configService.getOrThrow<string>('SESSION_DOMAIN'),
         maxAge: +configService.getOrThrow<string>('SESSION_MAX_AGE'),
@@ -67,8 +69,7 @@ async function bootstrap() {
         secure: parseBoolean(
           configService.getOrThrow<string>('SESSION_SECURE'),
         ),
-        sameSite: configService.getOrThrow<'lax' | 'strict'>('SAME_SITE'),
-        path: '/',
+        sameSite: configService.getOrThrow<'lax' | 'strict' | 'none'>('SAME_SITE'),
       },
     }),
   );

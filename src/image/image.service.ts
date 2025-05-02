@@ -10,14 +10,18 @@ export class ImageService {
     imageName: string,
     res: Response,
   ): Promise<void | Response> {
+    const chunks: string[] = imageName.split('/');
     const imagePath = path.join(
       __dirname,
       '..',
       '..',
       'uploads',
       'images',
-      imageName,
+      ...chunks,
     );
+
+    imageName = chunks.at(-1)!;
+
     const webpDirPath = path.join(__dirname, '..', '..', 'uploads', 'webp');
     const webpFilePath = path.join(webpDirPath, `${imageName}.webp`);
 
