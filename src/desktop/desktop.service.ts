@@ -29,10 +29,46 @@ export class DesktopService {
         icon: 'Gamepad2',
       },
       {
+        key: 10,
+        title: 'Наши услуги',
+        url: '/services/our-services',
+        icon: 'FileText',
+      },
+      {
+        key: 11,
+        title: 'Правила Vault57',
+        url: '/about/rules',
+        icon: 'Crown',
+      },
+      {
         key: 6,
         title: 'Отзывы',
         url: '/reviews',
         icon: 'MessageCircleHeart',
+      },
+      {
+        key: 7,
+        title: 'Мы на карте',
+        url: '/contacts-info/location',
+        icon: 'MapPinned',
+      },
+      {
+        key: 8,
+        title: 'График работы',
+        url: '/contacts-info/opening-hours',
+        icon: 'Clock4',
+      },
+      {
+        key: 9,
+        title: 'Пишите нам',
+        url: '/contacts-info/feedback-form',
+        icon: 'Mail',
+      },
+      {
+        key: 12,
+        title: 'Cоцсети',
+        url: '/contacts-info/feedback-form',
+        icon: 'QrCode',
       },
     ];
   }
