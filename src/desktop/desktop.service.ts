@@ -67,7 +67,7 @@ export class DesktopService {
       {
         key: 12,
         title: 'Cоцсети',
-        url: '/contacts-info/feedback-form',
+        url: '/contacts-info/social-networks',
         icon: 'QrCode',
       },
     ];
